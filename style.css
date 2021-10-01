@@ -20,7 +20,8 @@ header{
 header nav{
     padding: 0 20px;
     background-color: #008c8c;
-    position: sticky;
+    position: fixed;
+    position: -webkit-sticky;
     top: 0;
     z-index: 2;
     width: 100%;
@@ -86,17 +87,16 @@ section#top{
     display: flex;
     justify-content:center ;
     align-items: center;
+    /* margin-bottom: 20px; */
 }
 .code-logo a{
     display: inline-block;
     text-align: center;
     padding: 10px;
-
 }
 .code-logo a img{
     width: 2.5rem;
     height: 2.5rem;
-    
 }
 .about h1{
     text-align: center;
@@ -105,9 +105,77 @@ section#top{
 }
 .about p{
     text-align: center;
-    margin-bottom: 20px;
     padding: 10px;
 
+}
+
+button.hire-btn{
+    padding: 15px;
+    text-transform: uppercase;
+    position:relative;
+    border: none;
+    outline:none;
+    cursor: pointer;
+    background:rgb(179, 202, 194);
+    overflow: hidden;
+    z-index: 1;
+    width: 30%;
+    margin-bottom: 10px;
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+button.hire-btn::before{
+    content: " ";
+    width:100%;
+    height: 20%;
+    position: absolute;
+    top: 0px;
+    left:-100%;
+    background-color:#008c8c;
+    transition: 1s;
+}
+button.hire-btn:hover::before{
+    left:0%;
+}
+button.hire-btn::after{
+    content: " ";
+    width:100%;
+    height: 20%;
+    position: absolute;
+    bottom: 0px;
+    left:-100%;
+    background:#008c8c;
+    transition: 1s;
+}
+button.hire-btn:hover::after{
+    left:0%;
+}
+button.hire-btn span{
+    position:absolute;
+    width: 100%;
+    height: 60%;
+    background: #008c8c;
+    top:20%;
+    bottom: 20%;
+    right: -100%;
+    z-index: -1;
+    transition: 0.8s;
+}
+button.hire-btn:hover span{
+    right: 0%;
+    transition: 0.8s;
+
+}
+button.hire-btn:hover{
+    color: white;
+    transition: 0.8s;
+}
+.btn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px;
+    
 }
 
 /* skills */
@@ -246,7 +314,6 @@ section#top{
 
 .project-container{
     height: 200px;
-    /* margin-bottom: 10px; */
     overflow: hidden;
     position: relative;
     margin: 20px;
@@ -292,6 +359,17 @@ section#top{
     opacity: 0.2;
     transform: scale(1.1);
 }
+.other-projects{
+    margin:20px;
+}
+.other-projects h3,.other-projects p{
+    padding-top: 10px;
+    font-size: 1.3rem;
+}
+.other-projects a{
+  color:#c7c1c1;
+}
+
 
 /* contact */
 #contact{
@@ -351,6 +429,67 @@ footer p{
     padding: 20px;
     text-align: center;
 }
+
+.btn-project{
+    font-size: 1.2rem;
+    text-align: center;
+    padding: 5px;
+    font-family: sans-serif;
+}
+#btn-project span{
+    color: maroon;
+    font-family: cursive;
+}
+/* 
+form{
+      display: flex;
+    border-top:4px solid gold;
+    border-bottom:4px solid gold; 
+    width: 90%;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 20px;
+  }
+  form input{
+      padding-top:15px ;
+      background-color: transparent;
+      outline: none;
+      font-size:1.1rem ;
+      width: 70%;
+      border:none;
+      position: relative;
+      border-bottom: 2px solid white;
+      margin:10px;
+    }
+    
+    form input::placeholder{
+      position: absolute;
+      color: white;
+    }
+    
+    form input:focus::placeholder{
+      top:0px;
+      font-size: 0.6rem;
+      color: white;
+    }  
+    
+    form input:focus{
+  border-bottom: 2px solid black;
+  }
+  
+  
+  form input:valid{
+    border-color: lime;
+  
+  }
+  
+  form button{
+    display: block;
+    margin: 10px;
+    padding: 10px;
+    font-weight: bolder;
+    font-size: 1.2rem;
+  } */
 
 @keyframes spin{
     from{transform: rotate(0deg);}
@@ -449,6 +588,9 @@ footer p{
     .my-image{
         width: 15.625rem;
         height:15.625rem;
+    }
+    button.hire-btn{
+        width: 40%;
     }
     .projects{
         display: grid;
