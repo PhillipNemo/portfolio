@@ -20,11 +20,7 @@ header{
 header nav{
     padding: 0 20px;
     background-color: #008c8c;
-    position: fixed;
-    position: -webkit-sticky;
-    top: 0;
     z-index: 2;
-    width: 100%;
 }
 
 header nav ul{
@@ -64,7 +60,7 @@ section#top{
     display: flex;
     justify-content: center;
     align-items: center;
-    
+    /* padding-top: 50px; */
 }
 .image{
     width: 100%;
@@ -82,12 +78,10 @@ section#top{
     border-radius: 50%;
     transform: rotate(-15deg);
 }
-
 .code-logo{
     display: flex;
     justify-content:center ;
     align-items: center;
-    /* margin-bottom: 20px; */
 }
 .code-logo a{
     display: inline-block;
@@ -97,19 +91,43 @@ section#top{
 .code-logo a img{
     width: 2.5rem;
     height: 2.5rem;
-}
-.about h1{
-    text-align: center;
-    padding: 5px;
-
+    animation:fall-in-three 1s linear forwards 1.7s ;
+    opacity: 0;
 }
 .about p{
     text-align: center;
     padding: 10px;
+    opacity: 0;
+    animation:fall-in-two 1s linear forwards .6s ;
 
+}
+.about h1{
+    text-align: center;
+    padding: 5px;
+    animation:fall-in .7s linear forwards;
+}
+@keyframes fall-in{
+       from{transform: translateY(-100%); }
+       to{transform: translateY(0); }
+}
+@keyframes fall-in-two{
+       from{transform: translateY(-100%); }
+       to{
+           transform: translateY(0);
+           opacity: 1;
+     }
+}
+@keyframes fall-in-three{
+       from{transform: translateY(-100%); }
+       to{
+           transform: translateY(0);
+           opacity: 1;
+     }
 }
 
 button.hire-btn{
+    display: block;
+    margin: 20px auto;
     padding: 15px;
     text-transform: uppercase;
     position:relative;
@@ -123,6 +141,15 @@ button.hire-btn{
     margin-bottom: 10px;
     font-size: 1.1rem;
     font-weight: bold;
+    opacity: 0;
+    animation:slide-in 1s linear forwards 2.3s ;
+}
+@keyframes slide-in{
+    from{transform: translateX(-100%); }
+    to{
+        transform: translateX(0);
+        opacity: 1;
+  }
 }
 button.hire-btn::before{
     content: " ";
@@ -170,13 +197,7 @@ button.hire-btn:hover{
     color: white;
     transition: 0.8s;
 }
-.btn{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 20px;
-    
-}
+
 
 /* skills */
 #skills{
@@ -366,9 +387,6 @@ button.hire-btn:hover{
     padding-top: 10px;
     font-size: 1.3rem;
 }
-.other-projects a{
-  color:#c7c1c1;
-}
 
 
 /* contact */
@@ -505,15 +523,14 @@ form{
 @media only screen and (max-width:1024px){
 
     .about{
-         padding-top: 50px;  
+         padding-top: 50px; 
          flex-direction: column;
- 
          }
     .about h1{
         font-size: 4.8rem;
     }
     .about p{
-       margin-bottom: 30px;
+       margin-bottom: 10px;
         font-size: 2rem;
     }
 
@@ -575,12 +592,17 @@ form{
     .image-svg{
         margin-left: 9px;
     }
+    button.hire-btn{
+       margin-bottom: 20px;
+    }
    
 }
 @media only screen and (max-width:540px){
-
+     .about{
+         padding-top: 0;
+     }
     .about h1{
-        font-size: 2.4rem;
+        font-size: 3rem;
     }
     .about p{
         font-size: 1rem;
@@ -590,7 +612,7 @@ form{
         height:15.625rem;
     }
     button.hire-btn{
-        width: 40%;
+        width: 50%;
     }
     .projects{
         display: grid;
@@ -636,7 +658,7 @@ form{
   
 @media only screen and (max-width:380px){
     .about h1{
-        font-size: 1.5rem;
+        font-size: 1.4rem;
     }
     .about p{
        margin-bottom: 20px;
