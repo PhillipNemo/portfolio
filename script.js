@@ -15,8 +15,7 @@ window.addEventListener("scroll", function () {
 
 let occupation = [
     'A Front-end Developer',
-     'A Graphic Designer',
-      'A UI/UX Designer'
+     'A Graphic Designer'
 ];
 let time = 3000;
 let i = 0;
