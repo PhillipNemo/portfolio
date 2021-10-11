@@ -31,3 +31,40 @@ function imageChange(){
 setInterval(imageChange,time)
 
 
+const scrollOffset = 100;
+const scrollElements = document.querySelectorAll(".js-scroll");
+
+scrollElements.forEach((el) => {
+  el.style.opacity = 0
+})
+
+const elementInView = (el, offset = 0) => {
+  const elementTop = el.getBoundingClientRect().top;
+  return (
+    elementTop <=
+    ((window.innerHeight || document.documentElement.clientHeight) - offset)
+  );
+};
+
+const handleScrollAnimation = () => {
+  scrollElements.forEach((el) => {
+    if (elementInView(el, 100)) {
+      displayScrollElement(el);
+    }else{
+      hideScrollElement();
+    }
+  })
+};
+
+const displayScrollElement = (element) => {
+  element.classList.add('scrolled');
+}
+
+const hideScrollElement = (element) => {
+  element.classList.remove('scrolled');
+}
+
+window.addEventListener('scroll', () => {
+  handleScrollAnimation();
+})
+
