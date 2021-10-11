@@ -49,6 +49,31 @@ header nav ul li a:hover{
 
 /* section top */
 
+
+.js-scroll{
+    margin: 30px;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 1px 1px  18px rgb(199, 197, 197);
+    border-top: 5px solid #008c8c;
+    border-radius: 20px;
+}
+
+.scrolled {
+  animation: slide-in-left 1s ease-in-out both;
+}
+
+@keyframes slide-in-left {
+  0% {
+transform: translateX(-100px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+}
+}
+
 section#top{
     width: 100vw;
     margin-bottom: 10px;
@@ -200,14 +225,6 @@ button.hire-btn:hover{
 
 
 /* skills */
-#skills{
-    margin: 30px;
-    padding: 20px;
-    background-color: #fff;
-    box-shadow: 1px 1px  18px rgb(199, 197, 197);
-    border-top: 5px solid #008c8c;
-    border-radius: 20px;
-}
 
 #skills p{
     text-align: center;
@@ -246,14 +263,7 @@ button.hire-btn:hover{
 
 
 /* personal skill */
-.personal-skill{
-    margin: 30px;
-    padding: 20px;
-    box-shadow: 1px 1px  18px rgb(199, 197, 197);
-    background-color: #fff;
-    border-top: 5px solid #008c8c;
-    border-radius: 20px;
-}
+
 .personal-skill h1{
     text-align: center;
     padding: 10px;
@@ -267,14 +277,7 @@ button.hire-btn:hover{
 
 
 /* services */
-#services{
-    margin:30px;
-    padding: 20px;
-    background-color: #fff;
-    box-shadow: 1px 1px  18px rgb(199, 197, 197);
-    border-top: 5px solid #008c8c;
-    border-radius: 20px;
-}
+
 .services{
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -314,15 +317,6 @@ button.hire-btn:hover{
 
 /* projects */
 
-
-#projects{
-    margin:0 30px;
-    padding: 20px;
-    background-color: #fff;
-    box-shadow: 1px 1px  18px rgb(199, 197, 197);
-    border-top: 5px solid #008c8c;
-    border-radius: 20px;
-}
 .projects{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
