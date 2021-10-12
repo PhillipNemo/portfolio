@@ -51,7 +51,7 @@ const handleScrollAnimation = () => {
     if (elementInView(el, 100)) {
       displayScrollElement(el);
     }else{
-      hideScrollElement();
+      hideScrollElement(el);
     }
   })
 };
