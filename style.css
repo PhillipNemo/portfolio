@@ -11,6 +11,7 @@ html{
 }
 body{
     background-color: #eee;
+    width:100vw;
 }
 
 /* header section */
