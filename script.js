@@ -2,7 +2,7 @@ let year = document.querySelector('#year')
 let role = document.querySelector('.role')
 let toTop = document.querySelector(".to-top");
 
-year.innerHtml = new Date().getFullYear; 
+year.innerHtml = new Date().getFullYear(); 
 
 window.addEventListener("scroll", function () {
     if (window.scrollY > 200){
