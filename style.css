@@ -365,6 +365,7 @@ button.hire-btn:hover{
     text-align: center;
     display: none;
     z-index: 1;
+    Overflow-y:scroll;
 }
 
 .project-container button {
