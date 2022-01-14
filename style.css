@@ -339,12 +339,13 @@ button.hire-btn:hover{
 }
 
 .project-container{
-    height: 200px;
+    height: 250px;
     overflow: hidden;
     position: relative;
     margin: 20px;
     padding: 20px;
     border: 2px solid lightgrey;
+    
 
 }
 .project-container img{
@@ -365,7 +366,6 @@ button.hire-btn:hover{
     text-align: center;
     display: none;
     z-index: 1;
-    Overflow-y:scroll;
 }
 
 .project-container button {
