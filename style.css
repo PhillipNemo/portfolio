@@ -1,17 +1,19 @@
+/* Import Google font - Poppins */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
 *{
-    font-family: Georgia, 'Times New Roman', Times, serif;
-    padding:0px;
-    margin: 0px;
-    box-sizing: border-box;
-    text-decoration: none;
-    list-style: none;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+  text-decoration: none;
+  list-style: none;
 }
+
 html{
     scroll-behavior: smooth;
 }
 body{
     background-color: #eee;
-    width:100vw;
 }
 
 /* header section */
@@ -50,31 +52,6 @@ header nav ul li a:hover{
 
 /* section top */
 
-
-.js-scroll{
-    margin: 30px;
-    padding: 20px;
-    background-color: #fff;
-    box-shadow: 1px 1px  18px rgb(199, 197, 197);
-    border-top: 5px solid #008c8c;
-    border-radius: 20px;
-}
-
-.scrolled {
-  animation: slide-in-left 1s ease-in-out both;
-}
-
-@keyframes slide-in-left {
-  0% {
-transform: translateX(-100px);
-    opacity: 0;
-  }
-  100% {
-    transform: translateX(0);
-    opacity: 1;
-}
-}
-
 section#top{
     width: 100vw;
     margin-bottom: 10px;
@@ -94,16 +71,18 @@ section#top{
     margin: 0 auto;
     display: flex;
     justify-content: center;
+overflow:hidden;
 
 }
 .my-image{
     background-color: rgb(230, 220, 220);
     width: 18.75rem;
-    height: 18.75rem;
+    height:18.75rem;
     object-fit: cover;
     border-radius: 50%;
     transform: rotate(-15deg);
 }
+
 .code-logo{
     display: flex;
     justify-content:center ;
@@ -226,6 +205,14 @@ button.hire-btn:hover{
 
 
 /* skills */
+#skills{
+    margin: 30px;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 1px 1px  18px rgb(199, 197, 197);
+    border-top: 5px solid #008c8c;
+    border-radius: 20px;
+}
 
 #skills p{
     text-align: center;
@@ -264,7 +251,14 @@ button.hire-btn:hover{
 
 
 /* personal skill */
-
+.personal-skill{
+    margin: 30px;
+    padding: 20px;
+    box-shadow: 1px 1px  18px rgb(199, 197, 197);
+    background-color: #fff;
+    border-top: 5px solid #008c8c;
+    border-radius: 20px;
+}
 .personal-skill h1{
     text-align: center;
     padding: 10px;
@@ -278,7 +272,14 @@ button.hire-btn:hover{
 
 
 /* services */
-
+#services{
+    margin:30px;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 1px 1px  18px rgb(199, 197, 197);
+    border-top: 5px solid #008c8c;
+    border-radius: 20px;
+}
 .services{
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -318,6 +319,15 @@ button.hire-btn:hover{
 
 /* projects */
 
+
+#projects{
+    margin:0 30px;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 1px 1px  18px rgb(199, 197, 197);
+    border-top: 5px solid #008c8c;
+    border-radius: 20px;
+}
 .projects{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
@@ -387,7 +397,17 @@ button.hire-btn:hover{
 /* contact */
 #contact{
     text-align: center;
-    margin-top: 20px;
+    margin: 20px 30px;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 1px 1px  18px rgb(199, 197, 197);
+    border-top: 5px solid #008c8c;
+    border-radius: 20px;
+}
+#contact h1{
+    text-align: center;
+    padding: 10px;
+    border-bottom: 1px solid lightgrey;
 }
 .social-media a{
     padding: 10px;
@@ -453,17 +473,16 @@ footer p{
     color: maroon;
     font-family: cursive;
 }
-/* 
+
 form{
-      display: flex;
-    border-top:4px solid gold;
-    border-bottom:4px solid gold; 
+    display: flex;
     width: 90%;
     align-items: center;
     flex-direction: column;
     border-radius: 20px;
+    margin: 0 auto;
   }
-  form input{
+  form input,form textarea{
       padding-top:15px ;
       background-color: transparent;
       outline: none;
@@ -471,19 +490,19 @@ form{
       width: 70%;
       border:none;
       position: relative;
-      border-bottom: 2px solid white;
+      border-bottom: 1px solid lightgrey;
       margin:10px;
     }
     
     form input::placeholder{
       position: absolute;
-      color: white;
+      color: #000;
     }
     
     form input:focus::placeholder{
       top:0px;
       font-size: 0.6rem;
-      color: white;
+      color: #000;
     }  
     
     form input:focus{
@@ -502,8 +521,38 @@ form{
     padding: 10px;
     font-weight: bolder;
     font-size: 1.2rem;
-  } */
-
+    cursor:pointer;
+    outline:none;
+    border:1px solid lightgrey;
+    transition:.8s;
+  }
+   form button:hover{
+    color:#008c8c;
+    border:1px solid #008c8c;
+  }
+#status{
+  width: 70%;
+  margin:10px auto; 
+  padding: 10px;
+  border-radius:8px;
+  text-align: center;
+}
+#status.success{
+  background-color: green;
+  color:#fff; 
+  animation :status 10s forwards;
+}
+#status.error{
+  background-color: maroon;
+  color:#fff; 
+animation :status 10s forwards;
+}
+@keyframes status {
+  from{opacity:1}
+  to{opacity:0; display:none}
+}
+  
+  
 @keyframes spin{
     from{transform: rotate(0deg);}
     to{transform: rotate(360deg);}
@@ -518,14 +567,15 @@ form{
 @media only screen and (max-width:1024px){
 
     .about{
-         padding-top: 50px; 
+         padding-top: 50px;  
          flex-direction: column;
+ 
          }
     .about h1{
         font-size: 4.8rem;
     }
     .about p{
-       margin-bottom: 10px;
+       margin-bottom: 30px;
         font-size: 2rem;
     }
 
@@ -590,7 +640,9 @@ form{
     button.hire-btn{
        margin-bottom: 20px;
     }
-   
+   form input, form textarea{
+     width:90%;
+   }
 }
 @media only screen and (max-width:540px){
      .about{
