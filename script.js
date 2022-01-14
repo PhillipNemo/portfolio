@@ -1,11 +1,12 @@
-let currentYear = document.querySelector('#year')
+
 let role = document.querySelector('.role')
 let toTop = document.querySelector(".to-top");
+let year = document.querySelector("#year");
 
-currentYear.innerHtml = new Date().getFullYear(); 
+year.innerHTML = new Date().getFullYear();
 
 window.addEventListener("scroll", function () {
-    if (window.scrollY > 200){
+    if (window.scrollY > 300){
           toTop.style.opacity='1';
         }
         else{
@@ -17,6 +18,7 @@ window.addEventListener("scroll", function () {
 let occupation = [
     'A Front-end Developer',
      'A Graphic Designer'
+    
 ];
 let time = 3000;
 let i = 0;
@@ -32,40 +34,26 @@ function imageChange(){
 setInterval(imageChange,time)
 
 
-const scrollOffset = 100;
-const scrollElements = document.querySelectorAll(".js-scroll");
 
-scrollElements.forEach((el) => {
-  el.style.opacity = 0
-})
-
-const elementInView = (el, offset = 0) => {
-  const elementTop = el.getBoundingClientRect().top;
-  return (
-    elementTop <=
-    ((window.innerHeight || document.documentElement.clientHeight) - offset)
-  );
-};
-
-const handleScrollAnimation = () => {
-  scrollElements.forEach((el) => {
-    if (elementInView(el, 100)) {
-      displayScrollElement(el);
-    }else{
-      hideScrollElement(el);
+let form = document.getElementById("my-form");
+    
+    async function handleSubmit(event) {
+      event.preventDefault();
+      let status = document.getElementById("status");
+      let data = new FormData(event.target);
+      fetch(event.target.action, {
+        method: form.method,
+        body: data,
+        headers: {
+            'Accept': 'application/json'
+        }
+      }).then(response => {
+        status.classList.add("success")
+        status.innerHTML = "Thanks for your submission!";
+        form.reset()
+      }).catch(error => {
+        status.classList.add("error")
+        status.innerHTML = "Oops! There was a problem submitting your form"
+      });
     }
-  })
-};
-
-const displayScrollElement = (element) => {
-  element.classList.add('scrolled');
-}
-
-const hideScrollElement = (element) => {
-  element.classList.remove('scrolled');
-}
-
-window.addEventListener('scroll', () => {
-  handleScrollAnimation();
-})
-
+    form.addEventListener("submit", handleSubmit);
