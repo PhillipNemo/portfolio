@@ -9,6 +9,7 @@
   list-style: none;
 }
 
+
 html{
     scroll-behavior: smooth;
 }
@@ -339,13 +340,12 @@ button.hire-btn:hover{
 }
 
 .project-container{
-    height: 250px;
+    height: 200px;
     overflow: hidden;
     position: relative;
     margin: 20px;
     padding: 20px;
     border: 2px solid lightgrey;
-    
 
 }
 .project-container img{
@@ -378,6 +378,9 @@ button.hire-btn:hover{
     background-color: dodgerblue;
     font-weight: 450;
     color: #fff;
+}
+.link p{
+    font-size: .9rem;
 }
 .project-container:hover .link{
     display: block;
@@ -531,29 +534,6 @@ form{
     color:#008c8c;
     border:1px solid #008c8c;
   }
-#status{
-  width: 70%;
-  margin:10px auto; 
-  padding: 10px;
-  border-radius:8px;
-  text-align: center;
-}
-#status.success{
-  background-color: green;
-  color:#fff; 
-  animation :status 10s forwards;
-}
-#status.error{
-  background-color: maroon;
-  color:#fff; 
-animation :status 10s forwards;
-}
-@keyframes status {
-  from{opacity:1}
-  to{opacity:0; display:none}
-}
-  
-  
 @keyframes spin{
     from{transform: rotate(0deg);}
     to{transform: rotate(360deg);}
@@ -594,6 +574,9 @@ animation :status 10s forwards;
     .about{
         grid-template-columns: 1fr;
     
+    }
+    .link p{
+        font-size: .9rem;
     }
     .my-image{
         width: 28.125rem;
@@ -641,9 +624,10 @@ animation :status 10s forwards;
     button.hire-btn{
        margin-bottom: 20px;
     }
-   form input, form textarea{
-     width:90%;
-   }
+     .link button, .link p{
+        font-size: .8rem;
+    }
+   
 }
 @media only screen and (max-width:540px){
      .about{
@@ -704,7 +688,7 @@ animation :status 10s forwards;
     }
 }
   
-@media only screen and (max-width:380px){
+@media only screen and (max-width:400px){
     .about h1{
         font-size: 1.4rem;
     }
@@ -733,7 +717,28 @@ animation :status 10s forwards;
     header nav ul li a{
         font-size: .6rem;
     }
-  
+    .link p{
+        font-size:.8rem;
+    }
+   .web-design p,.web-development p,
+   .web-maintainance p,
+   .graphics-designer p{
+        padding:5% 0;
+    }
+}
+@media only screen and (max-width:350px){
+    .link button{
+        font-size: .7rem;
+    }
+     .link{
+        font-size:.7rem;
+    }
+    .project-container{
+    margin: 10px;
+    padding: 10px;
+
+}
+   
 }
 
   
