@@ -510,12 +510,14 @@ form{
     }  
    .success{
        background-color:green;
+        border:5px;
        color:#fff; 
        transition :.8s;
        animation :fadeout 3s forwards;
     }
     .failure{
        background-color:maroon;
+       border:5px;
        color:#fff; 
        transition :.8s;
        animation :fadeout 3s forwards;
