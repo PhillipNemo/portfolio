@@ -508,7 +508,22 @@ form{
       font-size: 0.6rem;
       color: #000;
     }  
-    
+   .success{
+       background-color:green;
+       color:#fff; 
+       transition :.8s;
+       animation :fadeout 3s forwards;
+    }
+    .failure{
+       background-color:maroon;
+       color:#fff; 
+       transition :.8s;
+       animation :fadeout 3s forwards;
+    }
+    @keyframes fadeout {
+      from {opacity : 1}
+      to{opacity : 0;}
+      }
     form input:focus{
   border-bottom: 2px solid black;
   }
